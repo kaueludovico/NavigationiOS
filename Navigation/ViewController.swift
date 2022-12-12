@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var dado: UITextField?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -16,22 +18,22 @@ class ViewController: UIViewController {
 
     @IBAction func tapNextViewController(_ sender: Any) {
         nextViewController()
-        
     }
     
     func nextViewController() {
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
-        guard let secondViewController = mainStoryboard.instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController else { print("View não foi encontrada")
+        guard let secondViewController = mainStoryboard.instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController else {
+            print("View não foi encontrada")
             return
         }
         
+        secondViewController.setData(dado?.text ?? "")
         secondViewController.modalTransitionStyle = .flipHorizontal
         
 //        navigationController?.pushViewController(secondViewController, animated: true)
         present(secondViewController, animated: true, completion: nil)
     }
-    
 }
 

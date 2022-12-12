@@ -27,6 +27,12 @@
                                     <action selector="tapNextViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eSr-PJ-4UC"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insira um dado: " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LPP-dr-7L0">
+                                <rect key="frame" x="96" y="330" width="222" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
@@ -36,6 +42,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xsH-XC-ci0"/>
+                    <connections>
+                        <outlet property="dado" destination="LPP-dr-7L0" id="rew-tY-ilH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,15 +69,31 @@
                                     <action selector="tapDismiss:" destination="tib-4j-yda" eventType="touchUpInside" id="opL-i2-bag"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxT-3e-RIt">
+                                <rect key="frame" x="102" y="610" width="211" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="8yK-A2-PTi"/>
+                                    <constraint firstAttribute="height" constant="21" id="r6b-Re-gcY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qyP-j4-1fd"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
+                            <constraint firstItem="TxT-3e-RIt" firstAttribute="top" secondItem="b1M-Sq-uiO" secondAttribute="bottom" constant="137" id="MyX-3u-PRn"/>
                             <constraint firstItem="b1M-Sq-uiO" firstAttribute="centerY" secondItem="pO5-9u-9f9" secondAttribute="centerY" id="SYv-K2-nCs"/>
+                            <constraint firstItem="TxT-3e-RIt" firstAttribute="leading" secondItem="b1M-Sq-uiO" secondAttribute="trailing" constant="-233.5" id="TkP-kh-gjP"/>
                             <constraint firstItem="b1M-Sq-uiO" firstAttribute="centerX" secondItem="pO5-9u-9f9" secondAttribute="centerX" id="uQ3-Lh-Xal"/>
+                            <constraint firstItem="qyP-j4-1fd" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TxT-3e-RIt" secondAttribute="trailing" symbolic="YES" id="zdn-2h-ERF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IHc-2m-kEW"/>
+                    <connections>
+                        <outlet property="lblData" destination="TxT-3e-RIt" id="KiQ-Gi-Ca5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPf-JO-CZf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
